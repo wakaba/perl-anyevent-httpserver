@@ -359,6 +359,13 @@ sub DESTROY {
 
 1;
 
+=head1 AVAILABILTY
+
+Latest version of this script would be available from git repository:
+<http://suika.fam.cx/gate/git/wi/web/anyevent-httpserver.git/tree>.
+Alternatively, it is also available from GitHub:
+<https://github.com/wakaba/perl-anyevent-httpserver>.
+
 =head1 AUTHOR
 
 Wakaba <w@suika.fam.cx>.
