@@ -16,7 +16,7 @@ httpserver.pl - A simple broken HTTP server with CGI support
          my $self = shift;
          my $url = $self->url;
          my $path;
-         if ($url eq 'abc') {
+         if ($url eq '/abc') {
            $path = '/path/to/abc.cgi';
 	   $self->handle_by_cgi ($path);
 	   return 1;
