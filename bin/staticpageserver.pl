@@ -15,7 +15,7 @@ my $server = HTTPServer->new(
         my $self = shift;
         my $url = $self->url;
         my @path = grep { length } split m{/}, $url; # unsafe!
-        my $file_name = $base_path . join '/', @path; # unsafe!
+        my $file_name = join '/', $base_path, @path; # unsafe!
         warn "GET $url -> $file_name\n";
         if (-f $file_name) {
             open my $file, '<', $file_name or $self->send_error_response(404);
