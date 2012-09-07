@@ -14,6 +14,8 @@ my $server = HTTPServer->new(
     request_handler => sub {
         my $self = shift;
         my $url = $self->url;
+        $url =~ s/\#.*$//s;
+        $url =~ s/\?.*$//s;
         my @path = grep { length } split m{/}, $url; # unsafe!
         my $file_name = join '/', $base_path, @path; # unsafe!
         warn "GET $url -> $file_name\n";
