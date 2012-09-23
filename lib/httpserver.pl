@@ -122,8 +122,13 @@ sub listen ($) {
 } # listen
 
 sub run ($) {
-  AnyEvent->condvar->recv;
+  $_[0]->{cv} = AE::cv;
+  $_[0]->{cv}->recv;
 } #run
+
+sub stop ($) {
+  $_[0]->{cv}->send if $_[0]->{cv};
+} # stop
 
 sub debug_mode ($) {
   no warnings 'redefine';
@@ -133,6 +138,10 @@ sub debug_mode ($) {
     warn ref $_[0], "->DESTROY\n";
   }; # DESTROY
 } # debug_mode
+
+sub DESTROY {
+  $_[0]->stop;
+} # DESTROY
 
 1;
 
