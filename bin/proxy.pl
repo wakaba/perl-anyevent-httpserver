@@ -25,7 +25,7 @@ my $server = HTTPServer->new
          warn "Cache for URL <$url> ($file_name) found\n";
        } else {
          warn "Cache for URL <$url> ($file_name) not found\n";
-         system "curl --location \Q$url\E > \Q$file_name\E";
+         system "curl --max-redirs 5 --location \Q$url\E > \Q$file_name\E";
          unlink $file_name if $? >> 8;
        }
        if (-f $file_name) {
