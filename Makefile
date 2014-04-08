@@ -1,10 +1,14 @@
 all:
 
-## ------ Setup ------
-
 WGET = wget
 PERL = perl
 GIT = git
+
+updatenightly: pmb-update
+	$(GIT) add config
+
+## ------ Setup ------
+
 PERL_VERSION = latest
 PERL_PATH = $(abspath local/perlbrew/perls/perl-$(PERL_VERSION)/bin)
 
