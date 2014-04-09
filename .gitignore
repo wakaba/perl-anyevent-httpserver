@@ -8,3 +8,7 @@ pod2htmd.tmp
 /config/perl/libs.txt
 /Makefile.setupenv
 /deps/
+/perl
+/prove
+/plackup
+/cin
