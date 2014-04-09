@@ -2,4 +2,6 @@ AnyEvent
 AnyEvent::Handle
 AnyEvent::Run
 AnyEvent::Socket
+Digest::MD5
+File::Temp
 IO::Handle
