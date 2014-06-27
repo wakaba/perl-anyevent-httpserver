@@ -29,12 +29,14 @@ my $server = HTTPServer->new
          unlink $file_name if $? >> 8;
        }
        if (-f $file_name) {
-         open my $file, '<', $file_name or $self->send_error_response(404);
+         open my $file, '<', $file_name or $self->send_error_response (500);
          $self->http_handle->push_write("HTTP/1.0 200 OK\x0D\x0A\x0D\x0A");
+         # XXX can't preserve server's response code...
          local $/ = undef;
          $self->http_handle->push_write(<$file>);
        } else {
-         $self->send_error_response(404);
+         ## URL error, DNS error, ... (not an HTTP server error)
+         $self->send_error_response (500);
        }
        $self->destroy;
        return 1;
