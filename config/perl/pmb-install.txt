@@ -2,5 +2,5 @@ parent~0.228
 AnyEvent~7.08
 File::Temp~0.2304
 IO::Handle~1.28
-Digest::MD5~2.53
+Digest::MD5~2.54
 AnyEvent::Run~0.01
