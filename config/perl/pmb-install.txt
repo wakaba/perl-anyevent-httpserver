@@ -1,6 +1,7 @@
 AnyEvent~7.14
+AnyEvent::Handle
 AnyEvent::Run~0.01
 Canary::Stability~2012
 Digest::MD5~2.55
-File::Temp~0.2308
+File::Temp~0.2309
 IO::Handle~1.39
