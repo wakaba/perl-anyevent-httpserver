@@ -1,5 +1,4 @@
 AnyEvent~7.14
-AnyEvent::Handle
 AnyEvent::Run~0.01
 Canary::Stability~2012
 Digest::MD5~2.55
